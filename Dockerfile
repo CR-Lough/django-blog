@@ -13,4 +13,5 @@ RUN apt-get update && \
 COPY --chown=djangouser:djangouser . .
 
 USER djangouser
-CMD exec /bin/bash -c "trap : TERM INT; sleep infinity & wait"
+WORKDIR /django_blog/mysit 
+

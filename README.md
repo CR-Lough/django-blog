@@ -2,6 +2,8 @@
 
 A [Django](https://pypi.org/project/Django/) project that creates a blogging site.
 
+![Default Home View](__screenshots/home.png?raw=true "Title")
+
 ## How to use it
 ### Environment startup
 1. Clone the repository to your file system
@@ -9,16 +11,8 @@ A [Django](https://pypi.org/project/Django/) project that creates a blogging sit
     environment variables you want in your container
 3. Open your [Docker](https://www.docker.com/products/docker-desktop/) desktop application
 4. Open up your shell of choice (ex. fish, bash, powershell...)
-5. At the directory level of the cloned project, run `docker compose up --build`
-### Django startup
-Simply apply the migrations:
-
-    $ python manage.py migrate
-    
-
-Now run the development server:
-
-    $ python manage.py runserver
+5. At the directory level of the cloned project, run 
+    $ docker compose up --build
 
 ## Taking it to the next level
 1. Apply GitHub actions to auto-format files
