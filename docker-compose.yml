@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  pipeline:
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    volumes:
+      - .:/django_blog/
+
+    environment:
+      - TEST_KEY
+
+    stdin_open: true
+    tty: true
