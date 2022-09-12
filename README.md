@@ -22,3 +22,4 @@ A [Django](https://pypi.org/project/Django/) project that creates a blogging sit
 
 ## Resources
 - [awesome-django](https://github.com/wsvincent/awesome-django)
+- [Docker-Quickstart-Django](https://docs.docker.com/samples/django/)
