@@ -6,18 +6,10 @@ from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 
 class PostListView(ListView):
-    model = Post
     template_name = 'blogging/list.html'
-
-    def get_queryset(self):
-        self.publisher = get_object_or_404(Publisher, name=self.kwargs['publisher'])
-        return Post.objects.filter(publisher=self.publisher)
+    queryset = Post.objects.exclude(published_date__exact=None).order_by('-published_date')
 
 class PostDetailView(DetailView):
     model = Post
     template_name = 'blogging/detail.html'
-
-    def post(self, request, *args, **kwargs):
-        post = self.get_object()
-        context = {"object": post}
-        return render(request, "blogging/detail.html", context)
+    queryset = Post.objects.filter(published_date__isnull=False)
